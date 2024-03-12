@@ -5,14 +5,40 @@ const { EVENTS } = require('@bot-whatsapp/bot')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
 const MockAdapter = require('@bot-whatsapp/database/mock')
 
-const flowSecundario1 = addKeyword('1').addAnswer([' 💁‍♂️ En un momento tu asesor personal se comunicara contigo'])
+const flowSecundario1 = addKeyword('1')
+    .addAnswer([' 💁‍♂️ En un momento tu asesor personal se comunicara contigo'])
+    .addAnswer(' Escribe *Menu* si quieres realizar otra consulta',
+    null,
+    null,
+    [flowBienvenida])
 const flowSecundario2 = addKeyword('2').addAnswer([' 💹 En un momento te enviaremos tu estado de Cuenta'])
+    .addAnswer(' Escribe *Menu* si quieres realizar otra consulta',
+    null,
+    null,
+    [flowBienvenida])
 const flowSecundario3 = addKeyword('3').addAnswer([' 📑📱 En un momento un asesor se comunicara contigo para realizar el proceso'])
+    .addAnswer(' Escribe *Menu* si quieres realizar otra consulta',
+    null,
+    null,
+    [flowBienvenida])
 const flowSecundario4 = addKeyword('4').addAnswer(['📲 Nequi ➡️ 3202474936','📲 Daviplata ➡️ 3208119581','🏦 Bancolombia' ,'cuenta de ahorros ➡️ 15800000486'])
+    .addAnswer(' Escribe *Menu* si quieres realizar otra consulta',
+    null,
+    null,
+    [flowBienvenida])
 const flowSecundario5 = addKeyword('5').addAnswer(['📄 En un momento te confirmaremos si tu pago fue exitoso🫰💹💵 '])
-const flowSecundario6 = addKeyword('6').addAnswer(['📄 Aquí tenemos el flujo secundario 6'])
+    .addAnswer(' Escribe *Menu* si quieres realizar otra consulta',
+    null,
+    null,
+    [flowBienvenida])
+const flowSecundario6 = addKeyword('6').addAnswer(['📄 En un momento tu asesor personal cordoina contigo para desembolsar'])
+    .addAnswer(' Escribe *Menu* si quieres realizar otra consulta',
+    null,
+    null,
+    [flowBienvenida])
 
-const flowBienvenida = addKeyword(EVENTS.WELCOME,'botones')
+
+const flowBienvenida = addKeyword(EVENTS.WELCOME,'Menu')
     .addAnswer('¡Hola!👋 bienvenido a *S&F Pecado Capital*, en que podemos colaborarte hoy 😎💸')
     .addAnswer('Nuestro horario de atención 📅 es de Lunes a Sabado de *9 a.m. - 5 p.m.*')
     .addAnswer(['En que podemos colaborarte Hoy',
@@ -29,9 +55,12 @@ const flowBienvenida = addKeyword(EVENTS.WELCOME,'botones')
 const flowRecibirMedia = addKeyword(EVENTS.MEDIA)
     .addAnswer('En un momento te confirmaremos si tu pago fue exitoso🫰💹💵')
 
+const flowGracias = addKeyword('Gracias', 'muchas gracias')
+    .addAnswer('Feliz dia 👌😜')
+
 const main = async () => {
     const adapterDB = new MockAdapter()
-    const adapterFlow = createFlow([flowBienvenida,flowRecibirMedia])
+    const adapterFlow = createFlow([flowBienvenida,flowRecibirMedia,flowGracias])
     const adapterProvider = createProvider(BaileysProvider)
 
     createBot({
