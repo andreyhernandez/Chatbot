@@ -15,15 +15,9 @@ const flowSecundario3 = addKeyword('3').addAnswer([' 📑📱 En un momento un a
 const flowSecundario4 = addKeyword('4').addAnswer(['📲 Nequi ➡️ 3202474936','📲 Daviplata ➡️ 3208119581','🏦 Bancolombia' ,'cuenta de ahorros ➡️ 15800000486'])
     .addAnswer(' Escribe *Menu* si quieres realizar otra consulta')
 const flowSecundario5 = addKeyword('5').addAnswer(['📄 En un momento te confirmaremos si tu pago fue exitoso🫰💹💵 '])
-    .addAnswer(' Escribe *Menu* si quieres realizar otra consulta',
-    null,
-    null,
-    [flowBienvenida])
+    .addAnswer(' Escribe *Menu* si quieres realizar otra consulta')
 const flowSecundario6 = addKeyword('6').addAnswer(['📄 En un momento tu asesor personal cordoina contigo para desembolsar'])
-    .addAnswer(' Escribe *Menu* si quieres realizar otra consulta',
-    null,
-    null,
-    [flowBienvenida])
+    .addAnswer(' Escribe *Menu* si quieres realizar otra consulta')
 
 
 const flowBienvenida = addKeyword(EVENTS.WELCOME,'Menu')
