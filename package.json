@@ -20,8 +20,17 @@
         "wa-sticker-formatter": "4.4.4"
     },
     "devDependencies": {
+<<<<<<< HEAD
         "eslint": "^8.57.0",
         "eslint-plugin-bot-whatsapp": "latest"
+=======
+        "@eslint/js": "^9.0.0",
+        "eslint": "^8.57.0",
+        "eslint-plugin-bot-whatsapp": "latest",
+        "eslint-plugin-react": "^7.34.1",
+        "globals": "^15.0.0",
+        "typescript-eslint": "^7.6.0"
+>>>>>>> 31805f1029e29ba4dabd7ae052709dd60b2e2c34
     },
     "author": "",
     "license": "ISC"
