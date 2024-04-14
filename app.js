@@ -6,7 +6,7 @@ const BaileysProvider = require('@bot-whatsapp/provider/baileys')
 const MockAdapter = require('@bot-whatsapp/database/mock')
 
 const flowSecundario1 = addKeyword('1')
-    .addAnswer([' 💁‍♂️ En un momento tu asesor personal se comunicara contigo'])
+    .addAnswer([' 💁‍♂️ En un momento tu asesor personal se comunicara contigo.'])
     .addAnswer(' Escribe *Menu* si quieres realizar otra consulta')
 const flowSecundario2 = addKeyword('2').addAnswer([' 💹 En un momento te enviaremos tu estado de Cuenta'])
     .addAnswer(' Escribe *Menu* si quieres realizar otra consulta')
